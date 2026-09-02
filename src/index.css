@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; }
+  label { display: block; color: #d6d3d1; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  input, textarea { display: block; width: 100%; margin-top: 0.5rem; border: 1px solid #44403c; border-radius: 0.75rem; background: #292524; padding: 0.9rem 1rem; color: #fff; font-size: 0.95rem; font-weight: 400; letter-spacing: normal; outline: none; transition: border-color 180ms ease, box-shadow 180ms ease; }
+  input::placeholder, textarea::placeholder { color: #78716c; }
+  input:focus, textarea:focus { border-color: #f97316; box-shadow: 0 0 0 3px rgb(249 115 22 / 0.15); }
+}
+@layer components {
+  .font-display { font-family: 'Playfair Display', Georgia, serif; }
+  .eyebrow { color: #c2410c; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; line-height: 1.5; text-transform: uppercase; }
+  .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 600; letter-spacing: -0.035em; line-height: 0.98; }
+  .section-title em { color: #ea580c; font-style: italic; }
+}
+@keyframes fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-up { animation: fade-up 800ms ease both; }
