@@ -6,10 +6,10 @@ const siteData = {
   prices: { day: 'XXX €', weekend: 'XXX €', deposit: 'XXX €' }, requirements: { power: '230V / 16A Schuko', water: 'Integrierter Frisch- und Abwassertank' },
 };
 const gallery = [
-  { src: '/images/IMG-20260901-WA0002.jpg', alt: 'Krebs Pizzawagen von außen', label: 'Der Wagen für dein Event' },
-  { src: '/images/IMG-20260901-WA0004.jpg', alt: 'Innenansicht des Pizza-Wagens', label: 'Alles an einem Platz' },
-  { src: '/images/IMG-20260901-WA0000.jpg', alt: 'Pizza-Wagen mit Theke', label: 'Bereit zum Belegen & Backen' },
-  { src: '/images/IMG-20260901-WA0001.jpg', alt: 'Arbeitsfläche und Ofen im Wagen', label: 'Profi-Ausstattung' },
+  { src: `${import.meta.env.BASE_URL}images/IMG-20260901-WA0002.jpg`, alt: 'Krebs Pizzawagen von außen', label: 'Der Wagen für dein Event' },
+  { src: `${import.meta.env.BASE_URL}images/IMG-20260901-WA0004.jpg`, alt: 'Innenansicht des Pizza-Wagens', label: 'Alles an einem Platz' },
+  { src: `${import.meta.env.BASE_URL}images/IMG-20260901-WA0000.jpg`, alt: 'Pizza-Wagen mit Theke', label: 'Bereit zum Belegen & Backen' },
+  { src: `${import.meta.env.BASE_URL}images/IMG-20260901-WA0001.jpg`, alt: 'Arbeitsfläche und Ofen im Wagen', label: 'Profi-Ausstattung' },
 ];
 const features = [
   { icon: Flame, title: 'Elektro-Pizzaofen', text: 'Zwei Backkammern für ca. 6–7 Pizzen gleichzeitig – einfach einschalten und backen.' },
