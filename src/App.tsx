@@ -42,7 +42,28 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [sent, setSent] = useState(false);
   const scrollTo = (id: string) => { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); setMenuOpen(false); };
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); setSent(true); };
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get('name') ?? '');
+    const email = String(formData.get('email') ?? '');
+    const date = String(formData.get('date') ?? '');
+    const message = String(formData.get('message') ?? '');
+    const subject = `Buchungsanfrage Pizzawagen - ${date}`;
+    const body = [
+      'Hallo,',
+      '',
+      'ich moechte den Pizzawagen anfragen.',
+      '',
+      `Name: ${name}`,
+      `E-Mail: ${email}`,
+      `Wunschdatum: ${date}`,
+      '',
+      'Nachricht:',
+      message,
+    ].join('\n');
+    window.location.href = `mailto:${siteData.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
   const navItems = ['Ausstattung', 'Ablauf', 'Preise', 'Galerie', 'Rezept', 'Kontakt'];
 
   return <div className="min-h-screen bg-stone-50 text-stone-950 selection:bg-orange-200 selection:text-stone-950">
